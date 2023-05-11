@@ -86,3 +86,21 @@ nav ul li a {
 nav ul li a.active {
     color: #FFD700;
 }
+
+@media screen and (max-width: 1024px) {
+    .header {
+        padding-left: 20px;
+    }
+    nav {
+        position: static;
+        width: 100%;
+    }
+    .timeline {
+        margin-left: 0;
+        padding-left: 20px;
+        width: 100%;
+    }
+    .timeline-item {
+        width: 100%;
+    }
+}
