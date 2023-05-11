@@ -101,17 +101,42 @@
     
     @media screen and (max-width: 1024px) {
         .header {
-            padding-left: 20px;
+            padding-left: 0;
+            /* Reduce padding for smaller screens */
+            text-align: left;
+            /* Align the header to the left */
         }
         #nav-toggle {
             display: block;
             /* show on smaller screens */
+            position: fixed;
+            /* Fix the position of the nav toggle */
+            top: 10px;
+            /* Adjust top position as needed */
+            right: 10px;
+            /* Adjust right position as needed */
         }
         nav {
-            position: static;
-            width: 100%;
+            position: fixed;
+            /* Make nav fixed */
+            width: 80%;
+            /* Reduce width */
             transform: translateX(-100%);
             /* hide off-screen */
+            top: 0;
+            /* Align nav to top */
+            bottom: 0;
+            /* Align nav to bottom */
+            left: 0;
+            /* Align nav to left */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Add scroll if content overflows */
+            z-index: 999;
+            /* Keep nav on top of other elements */
+            padding-top: 40px;
+            /* Add padding on top */
         }
         nav.active {
             transform: translateX(0);
@@ -119,10 +144,13 @@
         }
         .timeline {
             margin-left: 0;
-            padding-left: 20px;
+            padding: 20px;
+            /* Add padding on all sides */
             width: 100%;
         }
         .timeline-item {
             width: 100%;
+            margin-bottom: 30px;
+            /* Increase margin between items */
         }
     }
