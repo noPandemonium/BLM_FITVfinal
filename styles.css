@@ -1,106 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    position: relative;
-    background-color: #000;
-    color: #fff;
-}
-
-.header {
-    padding-left: 255px;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-    padding: 20px;
-    color: #FFD700;
-}
-
-nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    width: 200px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    margin-bottom: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.timeline {
-    margin-left: 200px;
-    padding: 20px;
-    padding-left: 125px;
-    width: calc(100% - 200px);
-    /* Decrease the width */
-}
-
-.timeline-item {
-    height: auto;
-    width: 800px;
-    margin-bottom: 50px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.timeline-item h2 {
-    color: #FFD700;
-}
-
-.timeline-item img {
-    max-width: 100%;
-    /* Adjust the image width */
-    max-height: 500px;
-    /* Set a maximum height for the image */
-    height: auto;
-}
-
-nav ul li a.active {
-    color: #FFD700;
-}
-
-@media screen and (max-width: 1024px) {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        position: relative;
+        background-color: #000;
+        color: #fff;
+    }
+    
     .header {
-        padding-left: 20px;
+        padding-left: 255px;
+        text-align: center;
     }
+    
+    h1 {
+        margin: 0;
+        padding: 20px;
+        color: #FFD700;
+    }
+    
     nav {
-        position: static;
-        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        width: 200px;
+        transition: transform 0.3s ease-in-out;
     }
+    
+    #nav-toggle {
+        display: none;
+        /* hide on larger screens */
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    nav ul li {
+        margin-bottom: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
     .timeline {
-        margin-left: 0;
-        padding-left: 20px;
-        width: 100%;
+        margin-left: 200px;
+        padding: 20px;
+        padding-left: 125px;
+        width: calc(100% - 200px);
+        /* Decrease the width */
     }
+    
     .timeline-item {
-        width: 100%;
+        height: auto;
+        width: 800px;
+        margin-bottom: 50px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-}
+    
+    .timeline-item h2 {
+        color: #FFD700;
+    }
+    
+    .timeline-item img {
+        max-width: 100%;
+        /* Adjust the image width */
+        max-height: 500px;
+        /* Set a maximum height for the image */
+        height: auto;
+    }
+    
+    nav ul li a.active {
+        color: #FFD700;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .header {
+            padding-left: 20px;
+        }
+        #nav-toggle {
+            display: block;
+            /* show on smaller screens */
+        }
+        nav {
+            position: static;
+            width: 100%;
+            transform: translateX(-100%);
+            /* hide off-screen */
+        }
+        nav.active {
+            transform: translateX(0);
+            /* show on-screen */
+        }
+        .timeline {
+            margin-left: 0;
+            padding-left: 20px;
+            width: 100%;
+        }
+        .timeline-item {
+            width: 100%;
+        }
+    }

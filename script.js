@@ -16,11 +16,19 @@ window.addEventListener('scroll', function() {
 
 document.querySelectorAll('nav ul li a').forEach(function(link) {
     link.addEventListener('click', function(event) {
+        event.preventDefault(); // prevent the default action
 
         const target = document.querySelector(this.getAttribute('href'));
         window.scrollTo({
             top: target.offsetTop - (window.innerHeight / 2),
-            behavior: 'smooth'
+            behavior: 'instant' // change this to 'instant'
         });
+
+        // Close the navigation menu after clicking a link
+        document.getElementById('nav-toggle').parentElement.classList.remove('active');
     });
+});
+
+document.getElementById('nav-toggle').addEventListener('click', function() {
+    this.parentElement.classList.toggle('active');
 });
