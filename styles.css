@@ -35,7 +35,6 @@
     
     #nav-toggle {
         display: none;
-        /* hide on larger screens */
         background: none;
         border: none;
         color: #fff;
@@ -64,7 +63,6 @@
         padding: 20px;
         padding-left: 125px;
         width: calc(100% - 200px);
-        /* Decrease the width */
     }
     
     .timeline-item {
@@ -89,9 +87,7 @@
     
     .timeline-item img {
         max-width: 100%;
-        /* Adjust the image width */
         max-height: 500px;
-        /* Set a maximum height for the image */
         height: auto;
     }
     
